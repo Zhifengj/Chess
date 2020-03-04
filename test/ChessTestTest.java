@@ -79,10 +79,6 @@ public class ChessTestTest {
     }
 
     /**
-     * This test checks that the Chess Board is properly initialized.
-     * Assuming rectangular chess board
-     */
-    /**
      * Makes sure to check that any out-of-bounds locations are rejected.
      */
     @Test
@@ -93,16 +89,6 @@ public class ChessTestTest {
         assertTrue(standardBoard.isInBounds(0, 0));
         assertTrue(standardBoard.isInBounds(7, 7));
     }
-
-    /**
-     * Checks that the board can return pieces on the board.
-     * If there is no chess piece at a given location, the return should be null.
-     */
-
-
-    /**
-     * Test whether a generic chess piece can move to certain spots.
-     */
 
 
     /**
