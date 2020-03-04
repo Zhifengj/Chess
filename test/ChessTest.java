@@ -5,14 +5,8 @@ import java.awt.Color;
 import org.junit.Test;
 import org.junit.After;
 import org.junit.BeforeClass;
-import org.junit.runner.Description;
-import org.junit.runner.JUnitCore;
-import org.junit.runner.Result;
-import org.junit.runner.notification.Failure;
-import org.junit.runner.notification.RunListener;
 
-
-public class ChessTest extends RunListener {
+public class ChessTest {
 	private static Board standardBoard;
 	private static Piece genericPieceOnBoard;
 	private static Game gameLogic;
@@ -23,33 +17,6 @@ public class ChessTest extends RunListener {
 	private static final int yEmptyPosition = 0;
 	private static final int BLACK = 0;
 	private static final int WHITE = 1;
-	public void testRunStarted(Description description) throws Exception {
-		System.out.println("Number of tests to execute: " + description.testCount());
-	}
-
-	public void testRunFinished(Result result) throws Exception {
-		System.out.println("Number of tests executed: " + result.getRunCount());
-	}
-
-	public void testStarted(Description description) throws Exception {
-		System.out.println("Starting: " + description.getMethodName());
-	}
-
-	public void testFinished(Description description) throws Exception {
-		System.out.println("Finished: " + description.getMethodName());
-	}
-
-	public void testFailure(Failure failure) throws Exception {
-		System.out.println("Failed: " + failure.getDescription().getMethodName());
-	}
-
-	public void testAssumptionFailure(Failure failure) {
-		System.out.println("Failed: " + failure.getDescription().getMethodName());
-	}
-
-	public void testIgnored(Description description) throws Exception {
-		System.out.println("Ignored: " + description.getMethodName());
-	}
 
 	/**
 	 * Sets up reused objects for all test cases
@@ -505,23 +472,3 @@ public class ChessTest extends RunListener {
 		assertEquals(gameLogic.getPlayerTurn(), WHITE);
 	}
 }
-/*
-public class UnitTestRunner {
-	public static void main(String[] args) {
-		static JUnitCore junitCore;
-		static Class<?> ChessTest;
-
-		System.out.println("Running Junit Test Suite.");
-
-		junitCore = new JUnitCore();
-		junitCore.addListener(new ChessTest());
-
-		Result result = junitCore.run(ChessTest.class);
-		for (Failure failure : result.getFailures()) {
-			System.out.println(failure.toString());
-		}
-		System.out.println("Successful: " + result.wasSuccessful() + " ran " + result.getRunCount() + " tests");
-	}
-}
-
-*/
